@@ -1,0 +1,19 @@
+/*==============================
+            Animations
+==============================*/
+
+/* Home page hovers =====================*/
+.title-wrapper button:hover {
+  filter: brightness(1.1);
+}
+
+.btns-wrapper button:hover {
+  background-color: rgba(147, 86, 220, 0.15);
+  i {
+    color: $primary-color;
+  }
+}
+
+.heart-empty:hover {
+  opacity: 0;
+}

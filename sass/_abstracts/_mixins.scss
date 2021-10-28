@@ -1,0 +1,36 @@
+/*==============================
+        Flexbox centered
+==============================*/
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*==============================
+        Position absolute
+==============================*/
+
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+/* @include position(absolute, $top: 1em, $left: 50%);*/
+
+/*==============================
+        Global Margin
+==============================*/
+@mixin globalMargin {
+  width: 90%;
+  margin: 0 auto;
+}

@@ -1,0 +1,66 @@
+/*==============================
+      Home page Buttons
+==============================*/
+
+button {
+  border: none;
+  box-shadow: $shadow-color 0 3px 7px;
+  display: flex;
+  align-items: center;
+  outline: none;
+  font-size: $sm;
+  transition: $time;
+}
+
+.title-wrapper button {
+  background: rgb(147, 86, 220);
+  background: linear-gradient(
+    355deg,
+    rgba(147, 86, 220, 1) 17%,
+    rgba(255, 121, 218, 1) 100%
+  );
+  border-radius: 30px;
+  color: white;
+  margin-top: 1em;
+  padding: 1em;
+  width: 45%;
+  justify-content: center;
+}
+
+.btns-wrapper button {
+  background-color: $lightGray-color;
+  border-radius: 30px;
+  margin: 0.7em 0;
+  padding: 2.5em;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 4em;
+  }
+
+  .btn-number {
+    background-color: $primary-color;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: $white-color;
+    font-size: $xs;
+    @include flexCenter;
+    @include position(absolute, $left: -12px);
+  }
+
+  i {
+    @include position(absolute, $left: 2em);
+    font-size: $lg;
+    color: $text-gray;
+  }
+
+  h3 {
+    @include position(absolute, $left: 50%);
+    transform: translateX(-50%);
+    text-align: left;
+    width: 14em;
+  }
+}

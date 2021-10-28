@@ -1,0 +1,58 @@
+/*==============================
+    Home restaurants cards
+==============================*/
+.restaurants-card {
+  @include position(relative);
+  background-color: $white-color;
+  border-radius: 20px;
+  margin-bottom: 1em;
+  width: 100%;
+
+  &:nth-child(1):after,
+  &:nth-child(2):after {
+    @include position(absolute, $top: 0.8em, $right: 0.8em);
+    background-color: $ternary-color;
+    color: $green;
+    content: "Nouveau";
+    font-family: $font-2;
+    font-size: $xs;
+    font-weight: bolder;
+    padding: 0.4em 0.6em;
+  }
+
+  &:last-child {
+    margin-bottom: 4em;
+  }
+
+  img {
+    border-radius: 20px 20px 0 0;
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: -4px;
+  }
+
+  .restaurants-card-infos {
+    @include position(relative);
+    background-color: $white-color;
+    border-radius: 0 0 20px 20px;
+    min-height: 4.8em;
+    padding: 0.7em;
+
+    .heart {
+      @include position(absolute, $top: 50%, $right: 1em);
+      cursor: pointer;
+      fill: white;
+      stroke-width: 1em;
+      stroke: black;
+      transform: translateY(-50%);
+      transition: $time;
+      width: 1.7em;
+    }
+
+    .heart-filled {
+      fill: url(#heart-gradient);
+      stroke: none;
+    }
+  }
+}
