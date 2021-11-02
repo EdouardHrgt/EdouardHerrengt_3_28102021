@@ -5,105 +5,172 @@
 /* Header =========================*/
 
 header {
+  background-color: $white-color;
+
+  .logo-wrapper {
+    background-color: inherit;
+    padding-top: 1.3em;
+    padding-bottom: 0.5em;
+    width: 100%;
+    text-align: center;
+    box-shadow: $shadow-color 0 3px 3px;
+    @include position(absolute, $top: 0);
+  }
+}
+
+.localisation-wrapper {
+  background-color: rgb(233, 233, 233);
+  padding: 1em;
+  margin-top: 4.1em;
+
+  p {
+    font-size: $md;
+    font-weight: bold;
+    left: -1em;
+    position: relative;
+    text-align: center;
+
+    i {
+      padding-right: 0.5em;
+    }
+  }
+}
+
+.title-wrapper {
+  align-items: center;
+  background-color: $lightGray-color;
+  display: flex;
+  flex-direction: column;
+  height: 20em;
+
+  h1 {
+    color: $black-color;
+    font-size: $h1-size;
+    line-height: 115%;
+    margin-top: 1.6em;
+    text-align: center;
+    width: 70%;
+    margin-bottom: 0.3em;
+  }
+
+  p {
+    padding: 0.7em;
+    text-align: center;
+    width: 92%;
+  }
+}
+
+/* Main ==========================*/
+
+main {
+  .fonctionnement-wrapper {
     background-color: $white-color;
-  
-    .logo-wrapper {
-      background-color: inherit;
-      padding-top: 1.3em;
-      padding-bottom: 0.5em;
-      width: 100%;
-      text-align: center;
-      box-shadow: $shadow-color 0 3px 3px;
-      @include position(absolute, $top: 0);
+    @include globalMargin;
+
+    h2 {
+      padding: 2em 0 1em;
+    }
+
+    .btns-wrapper {
+      display: flex;
+      flex-direction: column;
     }
   }
-  
-  .localisation-wrapper {
-    background-color: rgb(233, 233, 233);
-    padding: 0.95em;
-    margin-top: 4.1em;
-  
-    p {
-      font-size: $sm;
-      font-weight: bold;
-      left: -1em;
-      position: relative;
-      text-align: center;
-  
-      i {
-        padding-right: 0.5em;
-      }
-    }
-  }
-  
-  .title-wrapper {
-    align-items: center;
+
+  .restaurants-wrapper {
     background-color: $lightGray-color;
     display: flex;
     flex-direction: column;
-    height: 18em;
-  
-    p {
-      padding: 0.7em;
-      text-align: center;
-      width: 80%;
+
+    h2 {
+      padding: 2.5em 0 1em;
+      width: 90%;
+      margin: auto;
     }
   }
-  
-  /* Main ==========================*/
-  
-  main {
+}
+
+/* Footer =========================*/
+
+footer {
+  background-color: rgb(59, 59, 59);
+  height: 12.5em;
+
+  svg {
+    width: 7em;
+    margin: 0.9em 0 0.5em 5%;
+  }
+
+  nav {
     @include globalMargin;
-  
-    .fonctionnement-wrapper {
-      background-color: $white-color;
-  
-      .btns-wrapper {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  
-    .restaurants-wrapper {
-      background-color: $lightGray-color;
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: auto;
+  }
+
+  a {
+    display: flex;
+    align-items: baseline;
+    padding: 0.25em;
+  }
+
+  i {
+    margin-right: 0.7em;
+    color: $white-color;
+    font-size: $xxs;
+  }
+
+  .fa-hands-helping {
+    font-size: 0.62rem;
+  }
+
+  p {
+    color: $white-color;
+  }
+}
+
+/*==============================
+        Media Queries
+==============================*/
+
+/* Pads ================================*/
+
+@media screen and (min-width: $sm-brk) {
+  .fonctionnement-wrapper {
+    width: 100% !important;
+    @include flexCenter;
+    flex-direction: column;
+  }
+
+  .restaurants-wrapper h2,
+  .fonctionnement-wrapper h2 {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+
+/* small desktops ================================*/
+
+@media screen and (min-width: $md-brk) {
+  .fonctionnement-wrapper {
+    .btns-wrapper {
+      flex-direction: row !important;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-bottom: 5em;
     }
   }
-  
-  /* Footer =========================*/
-  
-  footer {
-    background-color: rgb(59, 59, 59);
-    height: 12.5em;
-  
-    svg {
-      width: 7em;
-      margin: 0.9em 0 0.5em 5%;
-    }
-  
-    nav {
-      @include globalMargin;
-    }
-  
-    a {
-      display: flex;
-      align-items: baseline;
-      padding: 0.25em;
-    }
-  
-    i {
-      margin-right: 0.7em;
-      color: $white-color;
-      font-size: $xxs;
-    }
-  
-    .fa-hands-helping {
-      font-size: 0.62rem;
-    }
-  
-    p {
-      color: $white-color;
-    }
+
+  .restaurants-wrapper h2,
+  .fonctionnement-wrapper h2 {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
   }
+
+  .restaurants-cards-wrapper {
+    @include flexCenter;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+  }
+}

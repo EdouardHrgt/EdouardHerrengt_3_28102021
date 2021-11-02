@@ -1,0 +1,52 @@
+/*========================================
+                all 4 menus
+========================================*/
+
+/* Header =========================*/
+.menu-logo-wrapper {
+  height: 4em;
+  @include flexCenter;
+  position: relative;
+  width: 100%;
+  background-color: $white-color;
+}
+
+.menu-logo-wrapper i {
+  color: rgb(59, 59, 59);
+  font-size: 1.2rem;
+  transform: translateY(-50%);
+  @include position(absolute, $top: 50%, $left: 5%);
+}
+
+.menu-background-image-wrapper {
+  height: 16.2em;
+  width: 100%;
+  background-image: url(./images/restaurants/a-la-francaise.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.menu-main {
+  background-color: rgb(240, 240, 240);
+  height: 100vh;
+  border-radius: 40px 40px 0 0;
+  padding: 2em 0 0 5%;
+  position: relative;
+  top: -2.6em;
+}
+
+.menu-main h2 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  font-size: 2rem;
+  color: black;
+}
+
+.menu-main h2 i {
+  color: gray;
+  font-size: 1.6rem;
+}

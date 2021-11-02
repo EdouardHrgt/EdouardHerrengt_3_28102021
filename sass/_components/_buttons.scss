@@ -16,14 +16,14 @@ button {
   background: rgb(147, 86, 220);
   background: linear-gradient(
     355deg,
-    rgba(147, 86, 220, 1) 17%,
+    rgba(147, 86, 220, 1) 20%,
     rgba(255, 121, 218, 1) 100%
   );
   border-radius: 30px;
   color: white;
-  margin-top: 1em;
-  padding: 1em;
-  width: 45%;
+  margin-top: 1.2em;
+  padding: 1.2em;
+  width: 60%;
   justify-content: center;
 }
 
@@ -31,10 +31,8 @@ button {
   background-color: $lightGray-color;
   border-radius: 30px;
   margin: 0.7em 0;
-  padding: 2.5em;
+  padding: 1.8em;
   position: relative;
-  display: flex;
-  align-items: center;
 
   &:last-child {
     margin-bottom: 4em;
@@ -52,15 +50,36 @@ button {
   }
 
   i {
-    @include position(absolute, $left: 2em);
-    font-size: $lg;
+    font-size: $md;
     color: $text-gray;
   }
 
   h3 {
-    @include position(absolute, $left: 50%);
-    transform: translateX(-50%);
+    margin: auto;
     text-align: left;
-    width: 14em;
+    width: 12.5em;
+    font-size: $md;
+  }
+}
+
+/*==============================
+        Media Queries
+==============================*/
+
+/* Pads ================================*/
+@media screen and (min-width: $sm-brk) {
+  .title-wrapper button {
+    width: 15em;
+  }
+
+  .btns-wrapper button {
+    width: 22em;
+  }
+}
+
+/* small desktops ================================*/
+@media screen and (min-width: $md-brk) {
+  .btns-wrapper button:last-child {
+    margin-bottom: 0.7em;
   }
 }

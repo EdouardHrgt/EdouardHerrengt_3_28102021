@@ -1,6 +1,9 @@
 /*========================================
              Main CSS Imports
 ========================================*/
+/*========================================
+            Reset default value
+========================================*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +25,7 @@ a {
             Fonts
 ==============================*/
 /*==============================
-            Sizings
+            Break points
 ==============================*/
 /*==============================
         Transitions time
@@ -36,32 +39,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Shrikhand", cursive;
-}
-
-h1 {
-  color: #0e0e0e;
-  font-size: 1.6rem;
-  line-height: 115%;
-  margin-top: 1.1em;
-  text-align: center;
-  width: 70%;
-  margin-bottom: 0.3em;
+  font-family: "Roboto", sans-serif;
 }
 
 h2 {
-  padding: 1.8em 0 1em;
   font-size: 1.6rem;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.25rem;
 }
 
 p {
   color: #616161;
   font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 a {
@@ -74,7 +70,6 @@ a {
 /*==============================
         Position absolute
 ==============================*/
-/* @include position(absolute, $top: 1em, $left: 50%);*/
 /*==============================
         Global Margin
 ==============================*/
@@ -107,17 +102,17 @@ button {
   align-items: center;
   outline: none;
   font-size: 1rem;
-  transition: 0.5s;
+  transition: 0.6s;
 }
 
 .title-wrapper button {
   background: #9356dc;
-  background: linear-gradient(355deg, #9356dc 17%, #ff79da 100%);
+  background: linear-gradient(355deg, #9356dc 20%, #ff79da 100%);
   border-radius: 30px;
   color: white;
-  margin-top: 1em;
-  padding: 1em;
-  width: 45%;
+  margin-top: 1.2em;
+  padding: 1.2em;
+  width: 60%;
   justify-content: center;
 }
 
@@ -125,10 +120,8 @@ button {
   background-color: #f2f2f2;
   border-radius: 30px;
   margin: 0.7em 0;
-  padding: 2.5em;
+  padding: 1.8em;
   position: relative;
-  display: flex;
-  align-items: center;
 }
 .btns-wrapper button:last-child {
   margin-bottom: 4em;
@@ -147,19 +140,35 @@ button {
   left: -12px;
 }
 .btns-wrapper button i {
-  position: absolute;
-  left: 2em;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: #616161;
 }
 .btns-wrapper button h3 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: auto;
   text-align: left;
-  width: 14em;
+  width: 12.5em;
+  font-size: 1.15rem;
 }
 
+/*==============================
+        Media Queries
+==============================*/
+/* Pads ================================*/
+@media screen and (min-width: 550px) {
+  .title-wrapper button {
+    width: 15em;
+  }
+
+  .btns-wrapper button {
+    width: 22em;
+  }
+}
+/* small desktops ================================*/
+@media screen and (min-width: 1150px) {
+  .btns-wrapper button:last-child {
+    margin-bottom: 0.7em;
+  }
+}
 /*==============================
     Home restaurants cards
 ==============================*/
@@ -167,8 +176,8 @@ button {
   position: relative;
   background-color: #fdfdfd;
   border-radius: 20px;
-  margin-bottom: 1em;
-  width: 100%;
+  margin: 0 auto 1.1em;
+  width: 90%;
 }
 .restaurants-card:nth-child(1):after, .restaurants-card:nth-child(2):after {
   position: absolute;
@@ -180,14 +189,14 @@ button {
   font-family: "Roboto", sans-serif;
   font-size: 0.875rem;
   font-weight: bolder;
-  padding: 0.4em 0.6em;
+  padding: 0.6em 0.8em;
 }
 .restaurants-card:last-child {
   margin-bottom: 4em;
 }
 .restaurants-card img {
   border-radius: 20px 20px 0 0;
-  height: 180px;
+  height: 195px;
   object-fit: cover;
   width: 100%;
   margin-bottom: -4px;
@@ -196,8 +205,8 @@ button {
   position: relative;
   background-color: #fdfdfd;
   border-radius: 0 0 20px 20px;
-  min-height: 4.8em;
-  padding: 0.7em;
+  height: 5em;
+  padding: 1.5em 1em;
 }
 .restaurants-card .restaurants-card-infos .heart {
   position: absolute;
@@ -208,14 +217,29 @@ button {
   stroke-width: 1em;
   stroke: black;
   transform: translateY(-50%);
-  transition: 0.5s;
-  width: 1.7em;
+  transition: 0.6s;
+  width: 1.5em;
 }
 .restaurants-card .restaurants-card-infos .heart-filled {
   fill: url(#heart-gradient);
   stroke: none;
 }
 
+/*==============================
+        Media Queries
+==============================*/
+/* Pads ================================*/
+@media screen and (min-width: 550px) {
+  .restaurants-card {
+    width: 30em;
+  }
+}
+/* small desktops ================================*/
+@media screen and (min-width: 1150px) {
+  .restaurants-card:last-child {
+    margin-bottom: 1.1em;
+  }
+}
 /*========================================
                 Home Page
 ========================================*/
@@ -236,11 +260,11 @@ header .logo-wrapper {
 
 .localisation-wrapper {
   background-color: #e9e9e9;
-  padding: 0.95em;
+  padding: 1em;
   margin-top: 4.1em;
 }
 .localisation-wrapper p {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: bold;
   left: -1em;
   position: relative;
@@ -255,21 +279,31 @@ header .logo-wrapper {
   background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
-  height: 18em;
+  height: 20em;
+}
+.title-wrapper h1 {
+  color: #0e0e0e;
+  font-size: 1.6rem;
+  line-height: 115%;
+  margin-top: 1.6em;
+  text-align: center;
+  width: 70%;
+  margin-bottom: 0.3em;
 }
 .title-wrapper p {
   padding: 0.7em;
   text-align: center;
-  width: 80%;
+  width: 92%;
 }
 
 /* Main ==========================*/
-main {
+main .fonctionnement-wrapper {
+  background-color: #fdfdfd;
   width: 90%;
   margin: 0 auto;
 }
-main .fonctionnement-wrapper {
-  background-color: #fdfdfd;
+main .fonctionnement-wrapper h2 {
+  padding: 2em 0 1em;
 }
 main .fonctionnement-wrapper .btns-wrapper {
   display: flex;
@@ -277,9 +311,13 @@ main .fonctionnement-wrapper .btns-wrapper {
 }
 main .restaurants-wrapper {
   background-color: #f2f2f2;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: column;
+}
+main .restaurants-wrapper h2 {
+  padding: 2.5em 0 1em;
+  width: 90%;
+  margin: auto;
 }
 
 /* Footer =========================*/
@@ -310,6 +348,129 @@ footer .fa-hands-helping {
 }
 footer p {
   color: #fdfdfd;
+}
+
+/*==============================
+        Media Queries
+==============================*/
+/* Pads ================================*/
+@media screen and (min-width: 550px) {
+  .fonctionnement-wrapper {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .restaurants-wrapper h2,
+.fonctionnement-wrapper h2 {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+/* small desktops ================================*/
+@media screen and (min-width: 1150px) {
+  .fonctionnement-wrapper .btns-wrapper {
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 5em;
+  }
+
+  .restaurants-wrapper h2,
+.fonctionnement-wrapper h2 {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .restaurants-cards-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+  }
+}
+/*========================================
+                all 4 menus
+========================================*/
+/* Header =========================*/
+.menu-logo-wrapper {
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  background-color: #fdfdfd;
+}
+
+.menu-logo-wrapper i {
+  color: #3b3b3b;
+  font-size: 1.2rem;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+
+.menu-background-image-wrapper {
+  height: 16.2em;
+  width: 100%;
+  background-image: url(./images/restaurants/a-la-francaise.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.menu-main {
+  background-color: #f0f0f0;
+  height: 100vh;
+  border-radius: 40px 40px 0 0;
+  padding: 2em 0 0 5%;
+  position: relative;
+  top: -2.6em;
+}
+
+.menu-main h2 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  font-size: 2rem;
+  color: black;
+}
+
+.menu-main h2 i {
+  color: gray;
+  font-size: 1.6rem;
+}
+
+.load-spinner-wrapper {
+  display: none;
+  background-color: #99e2d0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+.load-spinner-wrapper .load-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.load-spinner-wrapper .load-spinner p {
+  font-size: 5rem;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -25,11 +25,11 @@
   bottom: $bottom;
   left: $left;
 }
-/* @include position(absolute, $top: 1em, $left: 50%);*/
 
 /*==============================
         Global Margin
 ==============================*/
+
 @mixin globalMargin {
   width: 90%;
   margin: 0 auto;
