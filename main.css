@@ -92,16 +92,22 @@ a {
   opacity: 0;
 }
 
+/* Menus pages hovers =====================*/
+main button:hover {
+  filter: brightness(1.1);
+}
+
 /*==============================
       Home page Buttons
 ==============================*/
 button {
+  align-items: center;
   border: none;
   box-shadow: #b9b9b9 0 3px 7px;
+  cursor: pointer;
   display: flex;
-  align-items: center;
-  outline: none;
   font-size: 1rem;
+  outline: none;
   transition: 0.6s;
 }
 
@@ -169,6 +175,20 @@ button {
     margin-bottom: 0.7em;
   }
 }
+/*==============================
+      Menus pages Buttons
+==============================*/
+.menus-btn {
+  background: #9356dc;
+  background: linear-gradient(355deg, #9356dc 20%, #ff79da 100%);
+  border-radius: 30px;
+  color: white;
+  justify-content: center;
+  margin: 3em auto 0;
+  padding: 1.2em;
+  width: 50%;
+}
+
 /*==============================
     Home restaurants cards
 ==============================*/
@@ -240,6 +260,58 @@ button {
     margin-bottom: 1.1em;
   }
 }
+/*==============================
+      Menus page cards
+==============================*/
+.menu-cards {
+  background-color: #fdfdfd;
+  border-radius: 20px;
+  box-shadow: #b9b9b9 0 3px 7px;
+  height: 4.5em;
+  margin-top: 1.2em;
+  overflow: hidden;
+  width: 100%;
+}
+.menu-cards .menu-cards-infos {
+  padding: 1em;
+  width: 100%;
+}
+.menu-cards .menu-cards-infos h3 {
+  font-size: 1rem;
+}
+.menu-cards .menu-cards-infos p {
+  font-size: 0.875rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+.menu-cards .menu-cards-infos p span {
+  font-weight: bolder;
+}
+.menu-cards a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  border-radius: 20px;
+}
+.menu-cards a .checkbox {
+  background-color: #99e2d0;
+  width: 0;
+  height: 100%;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-cards a .checkbox i {
+  font-size: 1.15rem;
+  color: #fdfdfd;
+  display: none;
+}
+
 /*========================================
                 Home Page
 ========================================*/
@@ -399,9 +471,14 @@ footer p {
 /*========================================
                 all 4 menus
 ========================================*/
+body {
+  background-color: #f2f2f2;
+}
+
 /* Header =========================*/
 .menu-logo-wrapper {
-  height: 4em;
+  padding-top: 1.3em;
+  padding-bottom: 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -420,36 +497,67 @@ footer p {
 }
 
 .menu-background-image-wrapper {
-  height: 16.2em;
+  height: 17.5em;
   width: 100%;
   background-image: url(./images/restaurants/a-la-francaise.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
 }
 
+/* Main Section =========================*/
 .menu-main {
-  background-color: #f0f0f0;
-  height: 100vh;
-  border-radius: 40px 40px 0 0;
-  padding: 2em 0 0 5%;
   position: relative;
   top: -2.6em;
+  background-color: #f2f2f2;
+  border-radius: 40px 40px 0 0;
+  padding: 2em 1em;
 }
-
-.menu-main h2 {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  font-size: 2rem;
+.menu-main h1 {
+  font-size: 1.8rem;
   color: black;
+  font-family: "Shrikhand", cursive;
+}
+.menu-main .heart {
+  position: absolute;
+  top: 3.2em;
+  right: 2em;
+  cursor: pointer;
+  fill: white;
+  stroke-width: 1em;
+  stroke: black;
+  transform: translateY(-50%);
+  transition: 0.6s;
+  width: 1.5em;
+}
+.menu-main .heart-filled {
+  fill: url(#heart-gradient);
+  stroke: none;
 }
 
-.menu-main h2 i {
-  color: gray;
-  font-size: 1.6rem;
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.menu-wrapper .menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5em;
+}
+.menu-wrapper .menu h2 {
+  font-size: 1rem;
+  color: #616161;
+  position: relative;
+  font-weight: lighter;
+}
+.menu-wrapper .menu h2:after {
+  content: "";
+  background-color: #99e2d0;
+  height: 3px;
+  width: 5ch;
+  position: absolute;
+  bottom: -0.4em;
+  left: 0;
 }
 
 .load-spinner-wrapper {

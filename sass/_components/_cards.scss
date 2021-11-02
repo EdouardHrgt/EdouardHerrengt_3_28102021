@@ -73,3 +73,61 @@
     margin-bottom: 1.1em;
   }
 }
+
+/*==============================
+      Menus page cards
+==============================*/
+
+.menu-cards {
+  background-color: $white-color;
+  border-radius: 20px;
+  box-shadow: $shadow-color 0 3px 7px;
+  height: 4.5em;
+  margin-top: 1.2em;
+  overflow: hidden;
+  width: 100%;
+
+  .menu-cards-infos {
+    padding: 1em;
+    width: 100%;
+    
+    h3 {
+      font-size: $sm;
+    }
+
+    p {
+      font-size: $xs;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5em;
+
+      span {
+        font-weight: bolder;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    border-radius: 20px;
+
+    .checkbox {
+      background-color: $ternary-color;
+      width: 0;
+      height: 100%;
+      border-radius: 0 20px 20px 0;
+      @include flexCenter;
+
+      i {
+        font-size: $md;
+        color: $white-color;
+        display: none;
+      }
+    }
+  }
+}

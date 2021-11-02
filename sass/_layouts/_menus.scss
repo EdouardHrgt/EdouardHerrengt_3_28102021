@@ -2,9 +2,14 @@
                 all 4 menus
 ========================================*/
 
+body {
+  background-color:  $lightGray-color;
+}
+
 /* Header =========================*/
 .menu-logo-wrapper {
-  height: 4em;
+  padding-top: 1.3em;
+  padding-bottom: 0.5em;
   @include flexCenter;
   position: relative;
   width: 100%;
@@ -19,34 +24,67 @@
 }
 
 .menu-background-image-wrapper {
-  height: 16.2em;
+  height: 17.5em;
   width: 100%;
   background-image: url(./images/restaurants/a-la-francaise.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
 }
 
+/* Main Section =========================*/
 .menu-main {
-  background-color: rgb(240, 240, 240);
-  height: 100vh;
+  @include  position(relative, $top:-2.6em);
+  background-color: $lightGray-color;
   border-radius: 40px 40px 0 0;
-  padding: 2em 0 0 5%;
-  position: relative;
-  top: -2.6em;
+  padding: 2em 1em;
+  
+  h1 {
+    font-size: 1.8rem;
+    color: black;
+    font-family: $font-1;
+  }
+
+  .heart {
+    @include position(absolute, $top: 3.2em, $right: 2em);
+    cursor: pointer;
+    fill: white;
+    stroke-width: 1em;
+    stroke: black;
+    transform: translateY(-50%);
+    transition: $time;
+    width: 1.5em;
+  }
+
+  .heart-filled {
+    fill: url(#heart-gradient);
+    stroke: none;
+  }
 }
 
-.menu-main h2 {
-  align-items: center;
+.menu-wrapper {
   display: flex;
-  justify-content: space-between;
-  width: 90%;
-  font-size: 2rem;
-  color: black;
+  flex-direction: column;
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5em;
+
+    h2 {
+      font-size: $sm;
+      color: $text-gray;
+      position: relative;
+      font-weight: lighter;
+    }
+
+    h2:after {
+      content: '';
+      background-color: $ternary-color;
+      height: 3px;
+      width: 5ch;
+      @include position(absolute, $bottom: -0.4em, $left:0 );
+    }
+  }
 }
 
-.menu-main h2 i {
-  color: gray;
-  font-size: 1.6rem;
-}

@@ -3,12 +3,13 @@
 ==============================*/
 
 button {
+  align-items: center;
   border: none;
   box-shadow: $shadow-color 0 3px 7px;
+  cursor: pointer;
   display: flex;
-  align-items: center;
-  outline: none;
   font-size: $sm;
+  outline: none;
   transition: $time;
 }
 
@@ -82,4 +83,23 @@ button {
   .btns-wrapper button:last-child {
     margin-bottom: 0.7em;
   }
+}
+
+/*==============================
+      Menus pages Buttons
+==============================*/
+
+.menus-btn {
+  background: rgb(147, 86, 220);
+  background: linear-gradient(
+    355deg,
+    rgba(147, 86, 220, 1) 20%,
+    rgba(255, 121, 218, 1) 100%
+  );
+  border-radius: 30px;
+  color: white;
+  justify-content: center;
+  margin: 3em auto 0;
+  padding: 1.2em;
+  width: 50%;
 }
