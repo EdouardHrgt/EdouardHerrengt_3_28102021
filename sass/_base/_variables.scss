@@ -12,6 +12,7 @@ $lightGray-color: #f2f2f2;
 $text-gray: #616161;
 $shadow-color: #b9b9b9;
 $green: #196642;
+$footer-gray: #353535;
 
 /*==============================
             Fonts
@@ -31,9 +32,10 @@ $xxs: 0.75rem;
 /*==============================
             Break points
 ==============================*/
-$sm-brk: 550px;  
-$md-brk: 1150px;
+$sm-brk: 768px;  
+$md-brk: 1200px;
 $lg-brk: 1440px;
+$xl-brk: 1650px;
 
 /*==============================
         Transitions time

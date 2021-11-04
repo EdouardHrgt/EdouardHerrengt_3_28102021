@@ -24,20 +24,23 @@ button {
   color: white;
   margin-top: 1.2em;
   padding: 1.2em;
-  width: 60%;
+  width: 15em;
   justify-content: center;
 }
 
-.btns-wrapper button {
+.btns-wrapper .fonctionnement-btn {
+  align-items: center;
   background-color: $lightGray-color;
   border-radius: 30px;
+  display: flex;
+  justify-content: center;
   margin: 0.7em 0;
-  padding: 1.8em;
-  position: relative;
-
-  &:last-child {
-    margin-bottom: 4em;
-  }
+  padding: 1.6em;
+  position: relative;  
+  transition: $time;
+  width: 100%;
+  max-width: 35em;
+  box-shadow: $shadow-color 0 3px 7px;
 
   .btn-number {
     background-color: $primary-color;
@@ -60,28 +63,6 @@ button {
     text-align: left;
     width: 12.5em;
     font-size: $md;
-  }
-}
-
-/*==============================
-        Media Queries
-==============================*/
-
-/* Pads ================================*/
-@media screen and (min-width: $sm-brk) {
-  .title-wrapper button {
-    width: 15em;
-  }
-
-  .btns-wrapper button {
-    width: 22em;
-  }
-}
-
-/* small desktops ================================*/
-@media screen and (min-width: $md-brk) {
-  .btns-wrapper button:last-child {
-    margin-bottom: 0.7em;
   }
 }
 

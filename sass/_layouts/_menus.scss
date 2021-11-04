@@ -2,10 +2,6 @@
                 all 4 menus
 ========================================*/
 
-body {
-  background-color:  $lightGray-color;
-}
-
 /* Header =========================*/
 .menu-logo-wrapper {
   padding-top: 1.3em;
@@ -34,11 +30,12 @@ body {
 
 /* Main Section =========================*/
 .menu-main {
-  @include  position(relative, $top:-2.6em);
   background-color: $lightGray-color;
   border-radius: 40px 40px 0 0;
-  padding: 2em 1em;
-  
+  margin-top: -2.6em;
+  padding: 2em 1em 3em;
+  width: 100%;
+
   h1 {
     font-size: 1.8rem;
     color: black;
@@ -46,7 +43,7 @@ body {
   }
 
   .heart {
-    @include position(absolute, $top: 3.2em, $right: 2em);
+    @include position(absolute, $top: 3.5em, $right: 2em);
     cursor: pointer;
     fill: white;
     stroke-width: 1em;
@@ -79,12 +76,11 @@ body {
     }
 
     h2:after {
-      content: '';
+      content: "";
       background-color: $ternary-color;
       height: 3px;
       width: 5ch;
-      @include position(absolute, $bottom: -0.4em, $left:0 );
+      @include position(absolute, $bottom: -0.4em, $left: 0);
     }
   }
 }
-

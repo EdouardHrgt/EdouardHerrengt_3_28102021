@@ -1,0 +1,66 @@
+/*========================================
+            Menus Pages Responsive
+========================================*/
+
+@media screen and (min-width: $sm-brk) {
+  body {
+    background-color: $white-color !important;
+  }
+
+  .menu-background-image-wrapper {
+    height: 35vw !important;
+  }
+
+  .menu-main {
+    width: 80% !important;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    width: 25em;
+    margin: auto;
+  }
+
+  .menu-cards {
+    margin: 1.2em auto 0;
+    width: 25em;
+  }
+
+  .menus-btn {
+    width: 15em !important;
+  }
+}
+
+@media screen and (min-width: $lg-brk) {
+  .menu-wrapper {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+  }
+
+  h2 {
+    width: 22em;
+    margin: auto;
+  }
+
+  .menu-cards {
+    margin: 1.2em auto 0;
+    width: 22em;
+  }
+}
+
+@media screen and (min-width: $xl-brk) {
+  h2 {
+    width: 26em;
+    margin: auto;
+  }
+
+  .menu-cards {
+    margin: 1.2em auto 0;
+    width: 26em;
+  }
+}

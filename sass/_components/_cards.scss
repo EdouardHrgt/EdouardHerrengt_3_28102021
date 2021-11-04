@@ -4,9 +4,11 @@
 .restaurants-card {
   @include position(relative);
   background-color: $white-color;
+  box-shadow: $shadow-color 0 3px 7px;
   border-radius: 20px;
-  margin: 0 auto 1.1em;
+  margin: 0 auto 1.2em;
   width: 90%;
+  transition: $time;
 
   &:nth-child(1):after,
   &:nth-child(2):after {
@@ -21,12 +23,12 @@
   }
 
   &:last-child {
-    margin-bottom: 4em;
+    margin: 0 auto;
   }
 
   img {
     border-radius: 20px 20px 0 0;
-    height: 195px;
+    height: 12em;
     object-fit: cover;
     width: 100%;
     margin-bottom: -4px;
@@ -51,26 +53,12 @@
     }
 
     .heart-filled {
-      fill: url(#heart-gradient);
+      fill: url(#heart-gradient-1);
+      fill: url(#heart-gradient-2);
+      fill: url(#heart-gradient-3);
+      fill: url(#heart-gradient-4);
       stroke: none;
     }
-  }
-}
-
-/*==============================
-        Media Queries
-==============================*/
-/* Pads ================================*/
-@media screen and (min-width: $sm-brk) {
-  .restaurants-card {
-    width: 30em;
-  }
-}
-
-/* small desktops ================================*/
-@media screen and (min-width: $md-brk) {
-  .restaurants-card:last-child {
-    margin-bottom: 1.1em;
   }
 }
 
@@ -90,22 +78,21 @@
   .menu-cards-infos {
     padding: 1em;
     width: 100%;
-    
+
     h3 {
       font-size: $sm;
     }
-
     p {
       font-size: $xs;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       margin-top: 0.5em;
+      white-space: nowrap;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
 
-      span {
-        font-weight: bolder;
-      }
+    span {
+      font-weight: bolder;
     }
   }
 
@@ -122,11 +109,12 @@
       height: 100%;
       border-radius: 0 20px 20px 0;
       @include flexCenter;
+      transition: width ease-in-out $time;
 
       i {
         font-size: $md;
         color: $white-color;
-        display: none;
+        transition: all $time;
       }
     }
   }

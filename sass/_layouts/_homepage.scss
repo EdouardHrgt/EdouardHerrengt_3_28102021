@@ -49,14 +49,14 @@ header {
     line-height: 115%;
     margin-top: 1.6em;
     text-align: center;
-    width: 70%;
+    width: 12em;
     margin-bottom: 0.3em;
   }
 
   p {
     padding: 0.7em;
     text-align: center;
-    width: 92%;
+    width: 19em;
   }
 }
 
@@ -65,112 +65,27 @@ header {
 main {
   .fonctionnement-wrapper {
     background-color: $white-color;
-    @include globalMargin;
+    padding-bottom: 4em;
 
     h2 {
       padding: 2em 0 1em;
+      @include globalMargin;
     }
 
     .btns-wrapper {
       display: flex;
       flex-direction: column;
+      @include globalMargin;
     }
   }
 
   .restaurants-wrapper {
     background-color: $lightGray-color;
-    display: flex;
-    flex-direction: column;
+    padding-bottom: 4.5em;
 
     h2 {
       padding: 2.5em 0 1em;
-      width: 90%;
-      margin: auto;
+      @include globalMargin;
     }
-  }
-}
-
-/* Footer =========================*/
-
-footer {
-  background-color: rgb(59, 59, 59);
-  height: 12.5em;
-
-  svg {
-    width: 7em;
-    margin: 0.9em 0 0.5em 5%;
-  }
-
-  nav {
-    @include globalMargin;
-  }
-
-  a {
-    display: flex;
-    align-items: baseline;
-    padding: 0.25em;
-  }
-
-  i {
-    margin-right: 0.7em;
-    color: $white-color;
-    font-size: $xxs;
-  }
-
-  .fa-hands-helping {
-    font-size: 0.62rem;
-  }
-
-  p {
-    color: $white-color;
-  }
-}
-
-/*==============================
-        Media Queries
-==============================*/
-
-/* Pads ================================*/
-
-@media screen and (min-width: $sm-brk) {
-  .fonctionnement-wrapper {
-    width: 100% !important;
-    @include flexCenter;
-    flex-direction: column;
-  }
-
-  .restaurants-wrapper h2,
-  .fonctionnement-wrapper h2 {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    font-size: 2rem;
-  }
-}
-
-/* small desktops ================================*/
-
-@media screen and (min-width: $md-brk) {
-  .fonctionnement-wrapper {
-    .btns-wrapper {
-      flex-direction: row !important;
-      justify-content: space-evenly;
-      width: 100%;
-      margin-bottom: 5em;
-    }
-  }
-
-  .restaurants-wrapper h2,
-  .fonctionnement-wrapper h2 {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    font-size: 2rem;
-  }
-
-  .restaurants-cards-wrapper {
-    @include flexCenter;
-    flex-wrap: wrap;
-    margin-bottom: 2em;
   }
 }

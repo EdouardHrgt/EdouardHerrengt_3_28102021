@@ -4,14 +4,19 @@
 
 /* Home page hovers =====================*/
 .title-wrapper button:hover {
-  filter: brightness(1.1);
+  opacity: 0.8;
 }
 
-.btns-wrapper button:hover {
+.btns-wrapper .fonctionnement-btn:hover {
   background-color: rgba(147, 86, 220, 0.15);
+  cursor: pointer;
   i {
     color: $primary-color;
   }
+}
+
+.restaurants-card:hover {
+  transform: scale(1.02);
 }
 
 .heart-empty:hover {
@@ -21,5 +26,28 @@
 /* Menus pages hovers =====================*/
 
 main button:hover {
-  filter: brightness(1.1);
+  opacity: 0.8;
 }
+
+/* Home page KeyFrames =====================*/
+
+/* Loader animation */
+@keyframes Spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Menus pages KeyFrames =====================*/
+.menu-cards a:hover .checkbox {
+  width: 4em;
+}
+
+.menu-cards a:hover i {
+  transform: rotate(360deg);
+}
+

@@ -1,0 +1,52 @@
+/*! Footer ========================*/
+.footer {
+  width: 100%;
+  min-height: 12em;
+  background-color: $footer-gray;
+  @include flexCenter;
+
+  .footer-wrapper {
+    @include globalMargin;
+  }
+
+  .footer-logo {
+    font-family: $font-1;
+    color: white;
+    font-size: $xl;
+    padding: 0.5em 0;
+  }
+
+  .footer-wrapper-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-wrapper-link {
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    color: white;
+    height: 1.5em;
+    cursor: pointer;
+  }
+
+  .fa-utensils {
+    margin-right: 0.5em;
+  }
+
+  .fa-hands-helping {
+    margin-right: 0.2em;
+  }
+
+  .footer-wrapper-link-title {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  a {
+    color: white;
+  }
+}
