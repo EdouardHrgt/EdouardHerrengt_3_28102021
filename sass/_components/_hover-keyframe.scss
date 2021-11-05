@@ -44,15 +44,26 @@ footer h3:hover {
   opacity: 0.8;
 }
 
-
 /* Home page KeyFrames =====================*/
-@keyframes Spinner {
+@keyframes fadeOut {
   0% {
-    transform: rotate(0);
+    visibility: visible;
+    opacity: 1;
   }
-
   100% {
-    transform: rotate(360deg);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes loaderBalls {
+  0% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(3em);
   }
 }
 
@@ -60,9 +71,9 @@ footer h3:hover {
 @keyframes mealSlideIn {
   0% {
     opacity: 0;
-    transform: translateY(2em);
+    transform: translateY(1em);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }

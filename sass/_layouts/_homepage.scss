@@ -4,20 +4,41 @@
 
 /* Loader =========================*/
 .load-spinner-wrapper {
-  display: none;
-  background-color: $ternary-color;
+  /*display: none;*/
+  background-color: $primary-color;
   @include position(absolute, $top: 0, $bottom: 0, $left: 0, $right: 0);
-  z-index: 10;
+  z-index: 5;
+  position: fixed;
+  animation: fadeOut $md-time forwards;
+  animation-delay: $loader-time;
 
   .load-spinner {
     @include position(absolute, $top: 50%, $left: 50%);
     transform: translate(-50%, -50%);
-
-    i {
-      font-size: 15vw;
-      color: white;
-      animation: Spinner 2s ease-in-out 0s infinite normal none;
+    @include flexCenter;
+    &-balls {
+      width: 2em;
+      height: 2em;
+      background-color: $ternary-color;
+      margin: 0 0.5em;
+      border-radius: 50%;
+      animation: loaderBalls 1s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite
+        alternate;
+      @include flexCenter;
+      color: $white-color;
+      opacity: 0;
+      font-family: $font-2;
     }
+
+    &-balls:nth-child(even) {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+@for $i from 1 through 8 {
+  .load-spinner div:nth-child(#{$i}) {
+    animation-delay: (#{$i * 0.2s});
   }
 }
 

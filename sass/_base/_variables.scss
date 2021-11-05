@@ -32,14 +32,15 @@ $xxs: 0.75rem;
 /*==============================
             Break points
 ==============================*/
-$sm-brk: 768px;  
+$sm-brk: 768px;
 $md-brk: 1200px;
 $lg-brk: 1440px;
 $xl-brk: 1650px;
 
 /*==============================
-        Transitions time
+        Animation time
 ==============================*/
-$time: 0.6s;
+$loader-time: 5000ms;
 $lg-time: 2000ms;
+$time: 600ms;
 $md-time: 400ms;
