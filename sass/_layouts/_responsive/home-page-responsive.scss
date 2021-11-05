@@ -10,6 +10,7 @@
 
   .btns-wrapper .fonctionnement-btn {
     margin: 1em auto;
+
     h3 {
       margin: 0 4em;
     }
@@ -40,6 +41,16 @@
 }
 
 @media screen and (min-width: $lg-brk) {
+  .btns-wrapper {
+    width: 100% !important;
+    flex-direction: row !important;
+    justify-content: center;
+  }
+
+  .fonctionnement-btn {
+    margin: 1em !important;
+  }
+
   .restaurants-cards-wrapper {
     width: 65%;
     grid-row-gap: 1.5em;

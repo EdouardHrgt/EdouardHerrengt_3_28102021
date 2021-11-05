@@ -2,8 +2,26 @@
                 Home Page
 ========================================*/
 
-/* Header =========================*/
+/* Loader =========================*/
+.load-spinner-wrapper {
+  display: none;
+  background-color: $ternary-color;
+  @include position(absolute, $top: 0, $bottom: 0, $left: 0, $right: 0);
+  z-index: 10;
 
+  .load-spinner {
+    @include position(absolute, $top: 50%, $left: 50%);
+    transform: translate(-50%, -50%);
+
+    i {
+      font-size: 15vw;
+      color: white;
+      animation: Spinner 2s ease-in-out 0s infinite normal none;
+    }
+  }
+}
+
+/* Header =========================*/
 header {
   background-color: $white-color;
 
@@ -26,12 +44,11 @@ header {
   p {
     font-size: $md;
     font-weight: bold;
-    left: -1em;
     position: relative;
     text-align: center;
 
     i {
-      padding-right: 0.5em;
+      padding-right: 0.9em;
     }
   }
 }
@@ -61,7 +78,6 @@ header {
 }
 
 /* Main ==========================*/
-
 main {
   .fonctionnement-wrapper {
     background-color: $white-color;

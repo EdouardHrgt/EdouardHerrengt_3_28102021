@@ -74,6 +74,8 @@
   margin-top: 1.2em;
   overflow: hidden;
   width: 100%;
+  animation: mealSlideIn $lg-time forwards;
+  opacity: 0;
 
   .menu-cards-infos {
     padding: 1em;

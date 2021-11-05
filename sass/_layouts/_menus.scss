@@ -16,7 +16,7 @@
   color: rgb(59, 59, 59);
   font-size: 1.2rem;
   transform: translateY(-50%);
-  @include position(absolute, $top: 50%, $left: 5%);
+  @include position(absolute, $top: 60%, $left: 5%);
 }
 
 .menu-background-image-wrapper {
@@ -35,6 +35,7 @@
   margin-top: -2.6em;
   padding: 2em 1em 3em;
   width: 100%;
+  @include position(relative);
 
   h1 {
     font-size: 1.8rem;
@@ -43,7 +44,7 @@
   }
 
   .heart {
-    @include position(absolute, $top: 3.5em, $right: 2em);
+    @include position(absolute, $top: 3.5em, $right: 3em);
     cursor: pointer;
     fill: white;
     stroke-width: 1em;
@@ -81,6 +82,12 @@
       height: 3px;
       width: 5ch;
       @include position(absolute, $bottom: -0.4em, $left: 0);
+    }
+
+    @for $i from 1 through 3 {
+      .menu-cards-wrapper div:nth-child(#{$i}) {
+        animation-delay: (#{$i * 0.3s});
+      }
     }
   }
 }

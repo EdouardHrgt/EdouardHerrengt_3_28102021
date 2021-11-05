@@ -1,6 +1,7 @@
 /*========================================
              Main CSS Imports
 ========================================*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Shrikhand&display=swap");
 
 @import "./_base/reset";
 @import "./_base/variables";
@@ -8,16 +9,14 @@
 
 @import "./_abstracts/mixins";
 
-@import "./_components/animations";
+@import "./_components/hover-keyframe.scss";
 @import "./_components/buttons";
 @import "./_components/cards";
 
+@import "./_layouts/_responsive/footer-responsive.scss";
 @import "./_layouts/_responsive/home-page-responsive.scss";
 @import "./_layouts/_responsive/menus-responsive.scss";
 
 @import "./_layouts/footer.scss";
 @import "./_layouts/homepage";
-
 @import "./_layouts/menus.scss";
-@import "./_layouts/load-spinner.scss";
-

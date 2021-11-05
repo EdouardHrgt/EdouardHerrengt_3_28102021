@@ -1,0 +1,26 @@
+/*========================================
+            Footer Responsive
+========================================*/
+
+@media screen and (min-width: $sm-brk) {
+  .footer-wrapper {
+    width: 100% !important;
+  }
+
+  .footer-logo {
+    font-family: $font-1;
+    color: white;
+    font-size: $xl;
+    padding: 0.5em 0;
+    text-align: center;
+  }
+
+  .footer-wrapper-links {
+    justify-content: center;
+    flex-direction: row !important;
+  }
+
+  .footer-wrapper-link {
+    margin: 1em 2em;
+  }
+}

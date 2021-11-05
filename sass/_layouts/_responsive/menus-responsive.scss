@@ -7,10 +7,6 @@
     background-color: $white-color !important;
   }
 
-  .menu-background-image-wrapper {
-    height: 35vw !important;
-  }
-
   .menu-main {
     width: 80% !important;
     margin: auto;
@@ -36,6 +32,13 @@
 }
 
 @media screen and (min-width: $lg-brk) {
+  .menu-background-image-wrapper {
+    height: 22vw !important;
+  }
+  .menu-main {
+    min-height: 40em !important;
+  }
+
   .menu-wrapper {
     display: flex;
     flex-direction: row !important;
@@ -51,6 +54,9 @@
     margin: 1.2em auto 0;
     width: 22em;
   }
+  .menus-btn {
+    margin: 6em auto 0;
+  }
 }
 
 @media screen and (min-width: $xl-brk) {
@@ -60,7 +66,6 @@
   }
 
   .menu-cards {
-    margin: 1.2em auto 0;
     width: 26em;
   }
 }
