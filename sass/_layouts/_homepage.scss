@@ -16,13 +16,14 @@
     @include position(absolute, $top: 50%, $left: 50%);
     transform: translate(-50%, -50%);
     @include flexCenter;
+
     &-balls {
       width: 2em;
       height: 2em;
       background-color: $ternary-color;
-      margin: 0 0.5em;
+      margin: 0 0.3em;
       border-radius: 50%;
-      animation: loaderBalls 1s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite
+      animation: loaderBalls 0.7s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite
         alternate;
       @include flexCenter;
       color: $white-color;

@@ -2,9 +2,13 @@
             Footer Responsive
 ========================================*/
 
-@media screen and (min-width: $sm-brk) {
+@media screen and (min-width: $md-brk) {
   .footer-wrapper {
-    width: 100% !important;
+    width: 80% !important;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .footer-logo {
@@ -16,11 +20,7 @@
   }
 
   .footer-wrapper-links {
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: row !important;
-  }
-
-  .footer-wrapper-link {
-    margin: 1em 2em;
   }
 }

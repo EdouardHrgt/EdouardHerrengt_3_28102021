@@ -114,7 +114,6 @@ main button:hover {
 /* Footer hovers =====================*/
 footer a:hover,
 footer h3:hover {
-  text-decoration: underline;
   opacity: 0.8;
 }
 
@@ -346,9 +345,13 @@ button {
 /*========================================
             Footer Responsive
 ========================================*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .footer-wrapper {
-    width: 100% !important;
+    width: 80% !important;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .footer-logo {
@@ -360,12 +363,8 @@ button {
   }
 
   .footer-wrapper-links {
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: row !important;
-  }
-
-  .footer-wrapper-link {
-    margin: 1em 2em;
   }
 }
 /*========================================
@@ -432,13 +431,26 @@ button {
             Menus Pages Responsive
 ========================================*/
 @media screen and (min-width: 768px) {
-  body {
-    background-color: #fdfdfd !important;
+  .menu-logo-wrapper,
+.menu-background-image-wrapper {
+    width: 80% !important;
+    margin: auto;
+  }
+
+  .menu-background-image-wrapper {
+    border-radius: 40px 40px 0 0;
   }
 
   .menu-main {
     width: 80% !important;
     margin: auto;
+    border-radius: 0 !important;
+  }
+
+  .heart {
+    position: absolute;
+    right: 25% !important;
+    width: 2em !important;
   }
 
   h1 {
@@ -466,6 +478,11 @@ button {
 
   .menu-main {
     min-height: 40em !important;
+  }
+
+  .heart {
+    position: absolute;
+    right: 37% !important;
   }
 
   .menu-wrapper {
@@ -561,7 +578,7 @@ button {
   z-index: 5;
   position: fixed;
   animation: fadeOut 400ms forwards;
-  animation-delay: 5000ms;
+  animation-delay: 3750ms;
 }
 .load-spinner-wrapper .load-spinner {
   position: absolute;
@@ -576,9 +593,9 @@ button {
   width: 2em;
   height: 2em;
   background-color: #99e2d0;
-  margin: 0 0.5em;
+  margin: 0 0.3em;
   border-radius: 50%;
-  animation: loaderBalls 1s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
+  animation: loaderBalls 0.7s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -731,6 +748,7 @@ main .restaurants-wrapper h2 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  margin: auto;
 }
 
 /* Main Section =========================*/
