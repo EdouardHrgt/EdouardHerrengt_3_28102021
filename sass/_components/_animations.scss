@@ -2,7 +2,17 @@
             Animations
 ==============================*/
 
-/* Home page hovers =====================*/
+/* Home page Animations =====================*/
+.load-spinner-wrapper {
+  animation: fadeOut $md-time forwards;
+  animation-delay: $loader-time;
+}
+
+.load-spinner-balls {
+  animation: loaderBalls 0.7s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite
+    alternate;
+}
+
 .title-wrapper button:hover {
   opacity: 0.8;
 }
@@ -23,18 +33,32 @@
   opacity: 0;
 }
 
-/* Menus pages hovers =====================*/
-
+/* Menus pages Animations =====================*/
 main button:hover {
   opacity: 0.8;
 }
 
-.menu-cards a:hover .checkbox {
-  width: 4em;
+.menu-card {
+  animation: slideIn $lg-time forwards;
 }
 
-.menu-cards a:hover i {
-  transform: rotate(360deg);
+.menu-card:hover .checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slide-left $time ease;
+  transform-origin: right;
+}
+
+.menu-card:hover .menu-card-price {
+  padding-right: 4.3em;
+  transition: $time ease;
+}
+
+@for $i from 1 through 4 {
+  .menu-cards-wrapper div:nth-child(#{$i}) {
+    animation-delay: (#{$i * 0.3s});
+  }
 }
 
 /* Footer hovers =====================*/
@@ -43,7 +67,7 @@ footer h3:hover {
   opacity: 0.8;
 }
 
-/* Home page KeyFrames =====================*/
+/*KeyFrames =====================*/
 @keyframes fadeOut {
   0% {
     visibility: visible;
@@ -66,14 +90,40 @@ footer h3:hover {
   }
 }
 
-/* Menus pages KeyFrames =====================*/
-@keyframes mealSlideIn {
+@keyframes slideIn {
   0% {
     opacity: 0;
-    transform: translateY(1em);
+    transform: translateY(1.2em);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(-50px);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

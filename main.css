@@ -77,7 +77,16 @@ a {
 /*==============================
             Animations
 ==============================*/
-/* Home page hovers =====================*/
+/* Home page Animations =====================*/
+.load-spinner-wrapper {
+  animation: fadeOut 400ms forwards;
+  animation-delay: 3750ms;
+}
+
+.load-spinner-balls {
+  animation: loaderBalls 0.7s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
+}
+
 .title-wrapper button:hover {
   opacity: 0.8;
 }
@@ -98,17 +107,42 @@ a {
   opacity: 0;
 }
 
-/* Menus pages hovers =====================*/
+/* Menus pages Animations =====================*/
 main button:hover {
   opacity: 0.8;
 }
 
-.menu-cards a:hover .checkbox {
-  width: 4em;
+.menu-card {
+  animation: slideIn 2000ms forwards;
 }
 
-.menu-cards a:hover i {
-  transform: rotate(360deg);
+.menu-card:hover .checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slide-left 600ms ease;
+  transform-origin: right;
+}
+
+.menu-card:hover .menu-card-price {
+  padding-right: 4.3em;
+  transition: 600ms ease;
+}
+
+.menu-cards-wrapper div:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.menu-cards-wrapper div:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.menu-cards-wrapper div:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.menu-cards-wrapper div:nth-child(4) {
+  animation-delay: 1.2s;
 }
 
 /* Footer hovers =====================*/
@@ -117,7 +151,7 @@ footer h3:hover {
   opacity: 0.8;
 }
 
-/* Home page KeyFrames =====================*/
+/*KeyFrames =====================*/
 @keyframes fadeOut {
   0% {
     visibility: visible;
@@ -138,15 +172,38 @@ footer h3:hover {
     transform: translateY(3em);
   }
 }
-/* Menus pages KeyFrames =====================*/
-@keyframes mealSlideIn {
+@keyframes slideIn {
   0% {
     opacity: 0;
-    transform: translateY(1em);
+    transform: translateY(1.2em);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(-50px);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /*==============================
@@ -180,7 +237,7 @@ button {
   border-radius: 30px;
   display: flex;
   justify-content: center;
-  margin: 0.7em 0;
+  margin: 0.7em auto;
   padding: 1.6em;
   position: relative;
   transition: 600ms;
@@ -290,64 +347,76 @@ button {
 /*==============================
       Menus page cards
 ==============================*/
-.menu-cards {
+.menu-card {
+  align-items: center;
   background-color: #fdfdfd;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: #b9b9b9 0 3px 7px;
+  cursor: pointer;
+  display: flex;
   height: 4.5em;
+  justify-content: space-between;
   margin-top: 1.2em;
-  overflow: hidden;
-  width: 100%;
-  animation: mealSlideIn 2000ms forwards;
   opacity: 0;
-}
-.menu-cards .menu-cards-infos {
-  padding: 1em;
+  overflow: hidden;
+  position: relative;
   width: 100%;
 }
-.menu-cards .menu-cards-infos h3 {
+
+.dish-and-price {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu-card-dish {
+  margin-left: 1.25em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.menu-card-dish-title h3 {
   font-size: 1rem;
 }
-.menu-cards .menu-cards-infos p {
+
+.menu-card-dish p {
   font-size: 0.875rem;
-  margin-top: 0.5em;
-  white-space: nowrap;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #616161;
 }
-.menu-cards .menu-cards-infos span {
-  font-weight: bolder;
+
+.menu-card-price {
+  font-weight: bold;
+  padding: 1em 1.25em 0 0.45em;
+  color: #616161;
 }
-.menu-cards a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+.checkbox {
+  background: #99e2d0;
+  border-radius: 0 15px 15px 0;
+  display: none;
   height: 100%;
-  border-radius: 20px;
+  padding: 0 1.2em;
+  position: absolute;
+  right: 0;
 }
-.menu-cards a .checkbox {
-  background-color: #99e2d0;
-  width: 0;
-  height: 100%;
-  border-radius: 0 20px 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: width ease-in-out 600ms;
-}
-.menu-cards a .checkbox i {
-  font-size: 1.15rem;
-  color: #fdfdfd;
-  transition: all 600ms;
+
+.checkbox i {
+  animation: rotate 600ms both;
+  color: white;
+  font-size: 1.3rem;
+  transform: rotate(180deg);
 }
 
 /*========================================
             Footer Responsive
 ========================================*/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .footer-wrapper {
-    width: 80% !important;
+    width: 98% !important;
     display: flex;
     align-items: baseline;
     flex-direction: row;
@@ -365,6 +434,11 @@ button {
   .footer-wrapper-links {
     justify-content: space-evenly;
     flex-direction: row !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-wrapper {
+    width: 80% !important;
   }
 }
 /*========================================
@@ -447,12 +521,6 @@ button {
     border-radius: 0 !important;
   }
 
-  .heart {
-    position: absolute;
-    right: 25% !important;
-    width: 2em !important;
-  }
-
   h1 {
     text-align: center;
   }
@@ -462,7 +530,7 @@ button {
     margin: auto;
   }
 
-  .menu-cards {
+  .menu-card {
     margin: 1.2em auto 0;
     width: 25em;
   }
@@ -480,15 +548,11 @@ button {
     min-height: 40em !important;
   }
 
-  .heart {
-    position: absolute;
-    right: 37% !important;
-  }
-
   .menu-wrapper {
     display: flex;
     flex-direction: row !important;
     justify-content: space-between;
+    align-items: baseline;
   }
 
   h2 {
@@ -496,7 +560,7 @@ button {
     margin: auto;
   }
 
-  .menu-cards {
+  .menu-card {
     margin: 1.2em auto 0;
     width: 22em;
   }
@@ -511,7 +575,7 @@ button {
     margin: auto;
   }
 
-  .menu-cards {
+  .menu-card {
     width: 26em;
   }
 }
@@ -568,17 +632,14 @@ button {
 ========================================*/
 /* Loader =========================*/
 .load-spinner-wrapper {
-  /*display: none;*/
+  display: none;
   background-color: #9356dc;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 5;
-  position: fixed;
-  animation: fadeOut 400ms forwards;
-  animation-delay: 3750ms;
 }
 .load-spinner-wrapper .load-spinner {
   position: absolute;
@@ -595,7 +656,6 @@ button {
   background-color: #99e2d0;
   margin: 0 0.3em;
   border-radius: 50%;
-  animation: loaderBalls 0.7s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -744,11 +804,13 @@ main .restaurants-wrapper h2 {
 .menu-background-image-wrapper {
   height: 17.5em;
   width: 100%;
-  background-image: url(./images/restaurants/a-la-francaise.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   margin: auto;
+  overflow: hidden;
+}
+.menu-background-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Main Section =========================*/
@@ -768,7 +830,7 @@ main .restaurants-wrapper h2 {
 .menu-main .heart {
   position: absolute;
   top: 3.5em;
-  right: 3em;
+  right: 2em;
   cursor: pointer;
   fill: white;
   stroke-width: 1em;
@@ -805,15 +867,6 @@ main .restaurants-wrapper h2 {
   position: absolute;
   bottom: -0.4em;
   left: 0;
-}
-.menu-wrapper .menu .menu-cards-wrapper div:nth-child(1) {
-  animation-delay: 0.3s;
-}
-.menu-wrapper .menu .menu-cards-wrapper div:nth-child(2) {
-  animation-delay: 0.6s;
-}
-.menu-wrapper .menu .menu-cards-wrapper div:nth-child(3) {
-  animation-delay: 0.9s;
 }
 
 /*# sourceMappingURL=main.css.map */

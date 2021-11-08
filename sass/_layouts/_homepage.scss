@@ -4,13 +4,10 @@
 
 /* Loader =========================*/
 .load-spinner-wrapper {
-  /*display: none;*/
+  display: none;
   background-color: $primary-color;
-  @include position(absolute, $top: 0, $bottom: 0, $left: 0, $right: 0);
+  @include position(fixed, $top: 0, $bottom: 0, $left: 0, $right: 0);
   z-index: 5;
-  position: fixed;
-  animation: fadeOut $md-time forwards;
-  animation-delay: $loader-time;
 
   .load-spinner {
     @include position(absolute, $top: 50%, $left: 50%);
@@ -23,8 +20,6 @@
       background-color: $ternary-color;
       margin: 0 0.3em;
       border-radius: 50%;
-      animation: loaderBalls 0.7s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite
-        alternate;
       @include flexCenter;
       color: $white-color;
       opacity: 0;
