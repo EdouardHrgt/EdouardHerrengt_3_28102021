@@ -4,8 +4,8 @@
 
 /* Loader =========================*/
 .load-spinner-wrapper {
-  display: none;
   background-color: $primary-color;
+  opacity: 0.9;
   @include position(fixed, $top: 0, $bottom: 0, $left: 0, $right: 0);
   z-index: 5;
 
@@ -29,12 +29,6 @@
     &-balls:nth-child(even) {
       background-color: $secondary-color;
     }
-  }
-}
-
-@for $i from 1 through 8 {
-  .load-spinner div:nth-child(#{$i}) {
-    animation-delay: (#{$i * 0.2s});
   }
 }
 

@@ -13,10 +13,10 @@
 @import "./_components/buttons";
 @import "./_components/cards";
 
-@import "./_layouts/_responsive/footer-responsive.scss";
-@import "./_layouts/_responsive/home-page-responsive.scss";
-@import "./_layouts/_responsive/menus-responsive.scss";
-
 @import "./_layouts/footer.scss";
 @import "./_layouts/homepage";
 @import "./_layouts/menus.scss";
+
+@import "./_layouts/_responsive/footer-responsive.scss";
+@import "./_layouts/_responsive/home-page-responsive.scss";
+@import "./_layouts/_responsive/menus-responsive.scss";

@@ -13,6 +13,12 @@
     alternate;
 }
 
+@for $i from 1 through 4 {
+  .load-spinner div:nth-child(#{$i}) {
+    animation-delay: (#{$i * 0.2s});
+  }
+}
+
 .title-wrapper button:hover {
   opacity: 0.8;
 }
@@ -42,23 +48,20 @@ main button:hover {
   animation: slideIn $lg-time forwards;
 }
 
+@for $i from 1 through 4 {
+  .menu-cards-wrapper div:nth-child(#{$i}) {
+    animation-delay: (#{$i * 0.3s});
+  }
+}
+
 .menu-card:hover .checkbox {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: slide-left $time ease;
-  transform-origin: right;
+  animation: slide-left $time ease-in-out;
 }
 
 .menu-card:hover .menu-card-price {
   padding-right: 4.3em;
   transition: $time ease;
-}
-
-@for $i from 1 through 4 {
-  .menu-cards-wrapper div:nth-child(#{$i}) {
-    animation-delay: (#{$i * 0.3s});
-  }
 }
 
 /* Footer hovers =====================*/
@@ -69,61 +72,52 @@ footer h3:hover {
 
 /*KeyFrames =====================*/
 @keyframes fadeOut {
-  0% {
+  from {
     visibility: visible;
     opacity: 1;
   }
-  100% {
+  to {
     visibility: hidden;
     opacity: 0;
   }
 }
 
 @keyframes loaderBalls {
-  0% {
+  from {
     opacity: 0.3;
     transform: translateY(0);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(3em);
   }
 }
 
 @keyframes slideIn {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(1.2em);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes rotate {
-  0% {
+  from {
     transform: rotate(0);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
 @keyframes slide-left {
-  0% {
+  from {
     transform: scaleX(0);
   }
-  100% {
-    transform: scaleX(-50px);
-  }
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+  to {
+    transform: scaleX(1);
   }
 }
