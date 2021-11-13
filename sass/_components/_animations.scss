@@ -2,7 +2,7 @@
             Animations
 ==============================*/
 
-/* Home page Animations =====================*/
+/* Home Animations =====================*/
 .load-spinner-wrapper {
   animation: fadeOut $md-time forwards;
   animation-delay: $loader-time;
@@ -39,7 +39,7 @@
   opacity: 0;
 }
 
-/* Menus pages Animations =====================*/
+/* Menus Animations =====================*/
 main button:hover {
   opacity: 0.8;
 }
@@ -55,22 +55,22 @@ main button:hover {
 }
 
 .menu-card:hover .checkbox {
-  display: flex;
-  animation: slide-left $time ease-in-out;
+  transition: all 0.5s ease;
+  width: 20%;
 }
 
-.menu-card:hover .menu-card-price {
-  padding-right: 4.3em;
-  transition: $time ease;
+.menu-card:hover .checkbox i {
+  transform: rotate(360deg);
 }
 
-/* Footer hovers =====================*/
+/* Footer Animations =====================*/
 footer a:hover,
 footer h3:hover {
   opacity: 0.8;
 }
 
-/*KeyFrames =====================*/
+/* Keyframes =====================*/
+/*Loader fade out*/
 @keyframes fadeOut {
   from {
     visibility: visible;
@@ -82,6 +82,7 @@ footer h3:hover {
   }
 }
 
+/*Loader balls animation*/
 @keyframes loaderBalls {
   from {
     opacity: 0.3;
@@ -93,6 +94,7 @@ footer h3:hover {
   }
 }
 
+/*Menus fade in from bottom*/
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -104,20 +106,3 @@ footer h3:hover {
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes slide-left {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}

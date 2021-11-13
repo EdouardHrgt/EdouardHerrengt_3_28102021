@@ -83,8 +83,12 @@
       content: "";
       background-color: $ternary-color;
       height: 3px;
-      width: 5ch;
+      width: 4ch;
       @include position(absolute, $bottom: -0.4em, $left: 0);
+    }
+
+    .menu-cards-wrapper {
+      margin-top: 1.2em;
     }
   }
 }

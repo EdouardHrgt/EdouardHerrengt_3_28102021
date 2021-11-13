@@ -4,7 +4,7 @@
 .restaurants-card {
   @include position(relative);
   background-color: $white-color;
-  box-shadow: $shadow-color 0 3px 7px;
+  @include shadow;
   border-radius: 20px;
   margin: 0 auto 1.2em;
   width: 90%;
@@ -68,66 +68,71 @@
 ==============================*/
 
 .menu-card {
+  @include shadow;
   align-items: center;
   background-color: $white-color;
   border-radius: 15px;
-  box-shadow: $shadow-color 0 3px 7px;
-  cursor: pointer;
   display: flex;
   height: 4.5em;
   justify-content: space-between;
-  margin-top: 1.2em;
+  margin-bottom: 0.7em;
   opacity: 0;
   overflow: hidden;
-  position: relative;
+  padding-left: 0.5em;
   width: 100%;
-  
-  .dish-and-price {
-    align-items: center;
+  cursor: pointer;
+
+  &-text {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .menu-card-dish {
-    margin-left: 1.25em;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .menu-card-dish-title h3 {
-    font-size: $sm;
-  }
-
-  .menu-card-dish p {
-    font-size: $xs;
-    margin: 0;
+    flex-direction: column;
+    font-size: 1rem;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: $text-gray;
-  }
+    white-space: nowrap;
+    width: 85%;
 
+    h3 {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: $md;
+    }
+
+    p {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-top: 0.3em;
+      font-size: $sm;
+    }
+  }
+  
   .menu-card-price {
-    font-weight: bold;
-    padding: 1em 1.25em 0 0.45em;
-    color: $text-gray;
+    margin-left: 2%;
+    margin-top: 1.7em;
+    text-align: center;
+    width: 15%;
   }
-
+  
+  .menu-card-price span {
+    font-weight: bolder;
+  }
+  
   .checkbox {
-    @include position(absolute, $right: 0);
-    align-items: center;
-    background: $ternary-color;
+    background-color: $ternary-color;
     border-radius: 0 15px 15px 0;
-    display: none;
+    width: 0;
     height: 100%;
-    justify-content: center;
-    padding: 0 1.2em;
-    transform-origin: right;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    display: flex;
   }
-
+  
   .checkbox i {
-    animation: rotate $time both;
-    color: white;
-    font-size: 1.3rem;
+    color: $white-color;
+    margin: auto;
+    font-size: $md;
+    transition: all $time;
   }
 }
+
