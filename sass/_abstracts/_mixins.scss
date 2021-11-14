@@ -1,5 +1,5 @@
 /*==============================
-        Flexbox centered
+      Displaying w/ Flexbox 
 ==============================*/
 
 @mixin flexCenter {
@@ -8,8 +8,19 @@
   justify-content: center;
 }
 
+@mixin flexBox(
+  $direction: row, 
+  $align: stretch, 
+  $justify: flex-start
+  ) {
+  align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
 /*==============================
-        Position absolute
+        Positions setup
 ==============================*/
 
 @mixin position(
@@ -27,7 +38,7 @@
 }
 
 /*==============================
-        Global Margin
+        Margins
 ==============================*/
 
 @mixin globalMargin {
@@ -35,6 +46,9 @@
   margin: 0 auto;
 }
 
+/*==============================
+            Shadows
+==============================*/
 
 @mixin shadow {
   box-shadow: $shadow-color 0 3px 7px;

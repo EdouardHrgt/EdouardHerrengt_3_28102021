@@ -1,7 +1,7 @@
 /*========================================
             Footer Responsive
 ========================================*/
-@media all and (min-width: 768px) {
+@media screen and (min-width: $sm-brk) {
   footer .footer-wrapper {
     width: 98%!important;
     display: flex;

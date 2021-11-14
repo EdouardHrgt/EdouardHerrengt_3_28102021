@@ -5,7 +5,7 @@
 button {
   align-items: center;
   border: none;
-  box-shadow: $shadow-color 0 3px 7px;
+  @include shadow;
   cursor: pointer;
   display: flex;
   font-size: $sm;
@@ -40,7 +40,7 @@ button {
   transition: $time;
   width: 100%;
   max-width: 28em;
-  box-shadow: $shadow-color 0 3px 7px;
+  @include shadow;
 
   .btn-number {
     background-color: $primary-color;
