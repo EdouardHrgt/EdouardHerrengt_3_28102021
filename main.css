@@ -66,16 +66,16 @@ a {
 }
 
 /*==============================
-        Flexbox centered
+      Displaying w/ Flexbox 
 ==============================*/
 /*==============================
-        Position absolute
+        Positions setup
 ==============================*/
 /*==============================
-        Global Margin
+        Margins
 ==============================*/
 /*==============================
-        Box Shadow
+            Shadows
 ==============================*/
 /*==============================
             Animations
@@ -457,7 +457,6 @@ button {
 ========================================*/
 /* Loader =========================*/
 .load-spinner-wrapper {
-  display: none;
   background-color: #9356dc;
   opacity: 0.9;
   position: fixed;
@@ -669,7 +668,7 @@ main .restaurants-wrapper h2 {
 /*========================================
             Footer Responsive
 ========================================*/
-@media all and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   footer .footer-wrapper {
     width: 98% !important;
     display: flex;
